@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze competitor backlinks to improve your SEO strategy. Discover link opportunities and track your competition.">
+    <title>BacklinkSpy - Competitor Backlink Analysis Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__brand">
+            <i class="fas fa-link header__icon"></i>
+            <h1 class="header__title">BacklinkSpy</h1>
+        </div>
+        <p class="header__tagline">Uncover Your Competitor's Link Building Secrets</p>
+    </header>
+    
+    <main class="main">
+        <section class="input-panel">
+            <div class="panel__header">
+                <h2 class="panel__title">
+                    <i class="fas fa-search"></i>
+                    Analyze Domain
+                </h2>
+            </div>
+            <div class="panel__content">
+                <div class="input-group">
+                    <label for="domainInput" class="input-label">Enter Competitor Domain</label>
+                    <input 
+                        type="text" 
+                        id="domainInput" 
+                        class="domain-input" 
+                        placeholder="example.com"
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="options-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="includeSubdomains" checked>
+                        <span class="checkbox-text">Include subdomains</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="onlyDofollow">
+                        <span class="checkbox-text">Only dofollow links</span>
+                    </label>
+                </div>
+                <button type="button" id="analyzeBtn" class="btn btn--primary">
+                    <i class="fas fa-chart-line"></i>
+                    Analyze Backlinks
+                </button>
+            </div>
+        </section>
+
+        <section class="results-panel" id="resultsPanel">
+            <div class="panel__header">
+                <h2 class="panel__title">
+                    <i class="fas fa-chart-bar"></i>
+                    Backlink Analysis Results
+                </h2>
+                <button id="exportBtn" class="btn btn--secondary">
+                    <i class="fas fa-download"></i>
+                    Export CSV
+                </button>
+            </div>
+            
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-card__icon"><i class="fas fa-link"></i></div>
+                    <div class="stat-card__value" id="totalBacklinks">0</div>
+                    <div class="stat-card__label">Total Backlinks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon"><i class="fas fa-globe"></i></div>
+                    <div class="stat-card__value" id="referringDomains">0</div>
+                    <div class="stat-card__label">Referring Domains</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-card__value" id="domainAuthority">0</div>
+                    <div class="stat-card__label">Avg. Domain Authority</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-card__value" id="dofollowRatio">0%</div>
+                    <div class="stat-card__label">Dofollow Ratio</div>
+                </div>
+            </div>
+
+            <div class="backlinks-table-container">
+                <table class="backlinks-table" id="backlinksTable">
+                    <thead>
+                        <tr>
+                            <th>Source Domain</th>
+                            <th>Anchor Text</th>
+                            <th>DA</th>
+                            <th>Type</th>
+                            <th>First Seen</th>
+                        </tr>
+                    </thead>
+                    <tbody id="backlinksBody">
+                        <!-- Results populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="results-placeholder" id="placeholder">
+                <i class="fas fa-arrow-left"></i>
+                Enter a domain to analyze its backlink profile
+            </p>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 BacklinkSpy. Built for SEO professionals.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
