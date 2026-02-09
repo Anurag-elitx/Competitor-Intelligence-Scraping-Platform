@@ -87,3 +87,58 @@ Modify CSS variables in `:root` selector in `style.css`:
     /* ... other variables */
 }
 ```
+
+## 📝 Logging System
+
+The application includes a structured logging system for debugging and monitoring:
+
+```javascript
+// Log levels: DEBUG (0), INFO (1), WARN (2), ERROR (3)
+Logger.debug('Detailed debug info', { data });
+Logger.info('General information');
+Logger.warn('Warning message');
+Logger.error('Error occurred', error);
+```
+
+To enable debug logs, set `Logger.currentLevel = 0` in the console.
+
+## 🛡️ Error Handling
+
+All critical functions include try-catch blocks with:
+- Graceful error recovery
+- User-friendly error notifications
+- Detailed error logging for debugging
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+
+### Getting Started
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Make your changes following the code standards below
+4. Commit with descriptive messages: `git commit -m "feat: add new feature"`
+5. Push and create a Pull Request
+
+### Code Standards
+
+- **JavaScript**: Use ES6+ features, strict mode enabled
+- **JSDoc Comments**: Document all functions with `@param`, `@returns`, `@example`
+- **Error Handling**: Wrap critical operations in try-catch blocks
+- **Naming**: Use camelCase for functions/variables, UPPER_SNAKE_CASE for constants
+- **XSS Prevention**: Use `escapeHtml()` for user-generated content in HTML
+
+### Commit Message Format
+
+Use conventional commits:
+- `feat:` New features
+- `fix:` Bug fixes
+- `docs:` Documentation changes
+- `refactor:` Code refactoring
+- `style:` Formatting changes
+- `test:` Adding tests
+
+## 📜 License
+
+This project is available for educational and personal use.
